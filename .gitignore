@@ -1,0 +1,17 @@
+node_modules
+.next*
+.xmf-dev-server.pid
+out
+.env
+.env*.local
+.env.production
+*.secret
+*.secrets
+*credentials*.json
+setup-verification-output.txt
+*.log
+backups/
+.DS_Store
+.env.local.save
+.pnpm-store/
+supabase/.temp/

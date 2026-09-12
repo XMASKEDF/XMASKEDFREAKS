@@ -1,0 +1,12 @@
+[
+  { "code": "en", "name": "English", "nativeName": "English", "regions": ["US", "GB", "CA", "AU"], "direction": "ltr", "enabled": true },
+  { "code": "es", "name": "Spanish", "nativeName": "Español", "regions": ["ES", "MX", "AR", "CO", "CL", "PE"], "direction": "ltr", "enabled": true },
+  { "code": "fr", "name": "French", "nativeName": "Français", "regions": ["FR", "CA", "BE", "CH"], "direction": "ltr", "enabled": true },
+  { "code": "de", "name": "German", "nativeName": "Deutsch", "regions": ["DE", "AT", "CH"], "direction": "ltr", "enabled": true },
+  { "code": "pt", "name": "Portuguese", "nativeName": "Português", "regions": ["PT", "BR"], "direction": "ltr", "enabled": true },
+  { "code": "ja", "name": "Japanese", "nativeName": "日本語", "regions": ["JP"], "direction": "ltr", "enabled": true },
+  { "code": "ko", "name": "Korean", "nativeName": "한국어", "regions": ["KR"], "direction": "ltr", "enabled": true },
+  { "code": "zh-CN", "name": "Simplified Chinese", "nativeName": "简体中文", "regions": ["CN", "SG"], "direction": "ltr", "enabled": true },
+  { "code": "ar", "name": "Arabic", "nativeName": "العربية", "regions": ["SA", "AE", "EG", "QA", "KW", "JO", "MA"], "direction": "rtl", "enabled": true },
+  { "code": "ru", "name": "Russian", "nativeName": "Русский", "regions": ["RU", "BY", "KZ"], "direction": "ltr", "enabled": true }
+]

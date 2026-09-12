@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Pac-Mask Chase</title><desc id="desc">Masked arcade character navigating an original glowing neon maze.</desc>
+  <defs><radialGradient id="bg"><stop stop-color="#17152c"/><stop offset="1" stop-color="#020304"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="1280" height="720" fill="url(#bg)"/><g fill="none" stroke="#7b61ff" stroke-width="22" filter="url(#glow)"><path d="M80 80h1120v560H80zM210 80v190h210V160h230v190h210V160h210v200h130M80 430h210v210M420 350v290M650 350v200h210v90M1070 360v280"/></g>
+  <g fill="#e4b45d" filter="url(#glow)"><circle cx="155" cy="350" r="8"/><circle cx="250" cy="350" r="8"/><circle cx="345" cy="350" r="8"/><circle cx="520" cy="470" r="8"/><circle cx="620" cy="470" r="8"/><circle cx="940" cy="470" r="8"/><circle cx="1040" cy="470" r="8"/></g>
+  <path d="M375 430a86 86 0 1 0 0-120L310 370z" fill="#e4b45d" filter="url(#glow)"/><path d="M750 405c0-55 42-95 95-95s95 40 95 95v90l-24-20-24 20-24-20-24 20-24-20-20 20z" fill="#ff4f8b" filter="url(#glow)"/><circle cx="815" cy="390" r="11"/><circle cx="875" cy="390" r="11"/><text x="68" y="650" fill="#f7f0ea" font-family="Arial,sans-serif" font-size="54" font-weight="800">PAC-MASK CHASE</text>
+</svg>

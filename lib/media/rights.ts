@@ -1,0 +1,6 @@
+export type RightsType = "OWNED" | "LICENSED" | "COMMISSIONED" | "ROYALTY FREE" | "PUBLIC DOMAIN" | "THIRD PARTY" | "UNKNOWN" | "REVIEW REQUIRED";
+export type RightsStatus = "CLEARED" | "RESTRICTED" | "EXPIRING" | "EXPIRED" | "REVIEW REQUIRED";
+export type RightsEnforcementMode = "MONITOR" | "ENFORCE";
+export type MediaRightsRecord = { mediaId: string; title: string; objectReference: string | null; creator: string | null; rightsHolder: string | null; rightsType: RightsType; licenseType: string | null; acquisitionSource: string | null; usageScope: string | null; commercialUseAllowed: boolean | null; modificationAllowed: boolean | null; attributionRequired: boolean; geographicRestriction: string | null; startsAt: string | null; expiresAt: string | null; documentationReference: string | null; status: RightsStatus; notes: string | null };
+
+export function rightsPublishCheck(record: Pick<MediaRightsRecord, "status">, mode: RightsEnforcementMode) { const unresolved = ["EXPIRED", "REVIEW REQUIRED"].includes(record.status); return { allowed: !unresolved || mode === "MONITOR", requiresOverrideReason: unresolved && mode === "MONITOR", warning: unresolved ? `Rights status is ${record.status}.` : null }; }

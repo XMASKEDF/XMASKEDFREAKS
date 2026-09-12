@@ -1,0 +1,16 @@
+cd /Users/calebyoung/Documents/Codex/XMASKEDFREAKS
+
+# Inspect first.
+ls -lde tsconfig.tsbuildinfo .next-production/cache/eslint .
+
+# Only if the owner/group is wrong, substitute the verified owner and group.
+sudo chown "$USER":staff tsconfig.tsbuildinfo
+sudo chown -R "$USER":staff .next-production/cache/eslint
+
+# Restore only owner read/write/execute permissions needed by tools.
+chmod u+rw tsconfig.tsbuildinfo
+chmod -R u+rwX .next-production/cache/eslint
+
+# Re-test without changing source files.
+test -w tsconfig.tsbuildinfo && echo SET || echo UNAVAILABLE
+test -w .next-production/cache/eslint && echo SET || echo UNAVAILABLE

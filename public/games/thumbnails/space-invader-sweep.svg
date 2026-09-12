@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Space Invader Sweep</title><desc id="desc">Neon spacecraft battling an original alien wave in deep space.</desc>
+  <defs><radialGradient id="bg"><stop stop-color="#102820"/><stop offset="1" stop-color="#020504"/></radialGradient><linearGradient id="ship" x2="0" y2="1"><stop stop-color="#f8fff9"/><stop offset="1" stop-color="#55ff92"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="1280" height="720" fill="url(#bg)"/><g fill="#7dff9b" opacity=".35"> <circle cx="130" cy="100" r="3"/><circle cx="1110" cy="170" r="4"/><circle cx="930" cy="80" r="2"/><circle cx="340" cy="260" r="3"/><circle cx="1040" cy="490" r="3"/></g>
+  <g filter="url(#glow)" fill="none" stroke="#ff4f70" stroke-width="16"><path d="M250 145h120l36 45-36 45H250l-36-45z"/><path d="M580 115h120l36 45-36 45H580l-36-45z"/><path d="M910 155h120l36 45-36 45H910l-36-45z"/></g>
+  <g filter="url(#glow)" stroke="#55b8ff" stroke-width="10"><path d="M310 250v220"/><path d="M640 220v250"/><path d="M970 260v210"/></g>
+  <path d="M640 420 770 620 640 570 510 620z" fill="url(#ship)" filter="url(#glow)"/><path d="M640 450v118" stroke="#031108" stroke-width="20"/><text x="68" y="650" fill="#f7f0ea" font-family="Arial,sans-serif" font-size="54" font-weight="800">SPACE INVADER SWEEP</text>
+</svg>
