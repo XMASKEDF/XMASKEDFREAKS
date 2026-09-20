@@ -8,7 +8,7 @@ import { isKillSwitchRouteBlocked, type MaintenancePolicySettings } from "@/lib/
 import { isSameOriginRequest, requestBodyLimit } from "@/lib/security/request";
 import { isAdminDevAuthEnabled } from "@/lib/admin-dev-bypass";
 import { checkRateLimit, ruleForPath } from "@/lib/infrastructure/rate-limit";
-import { getBotProtectionProvider } from "@/lib/infrastructure/security-edge";
+import { getBotProtectionProvider } from "@/lib/infrastructure/bot-protection-edge";
 import { botPolicyForLevel, getStoredBotDetectionConfig, isActiveGameplayRoute, isGameRoute, isTurnstileCandidateRoute } from "@/lib/infrastructure/bot-policy";
 
 type EdgeMaintenanceState = MaintenancePolicySettings & { expiresAt: number };

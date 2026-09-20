@@ -32,11 +32,13 @@ test("gameplay is challenge-exempt while anti-cheat and dedicated policies remai
 
 test("challenge fallback and provider configuration cannot trap normal visitors", () => {
   const edge = source("lib/infrastructure/security-edge.ts");
+  const botProtectionEdge = source("lib/infrastructure/bot-protection-edge.ts");
   const example = source(".env.example");
-  assert.match(edge, /No approved challenge provider is configured; request is monitored instead/);
-  assert.match(edge, /NEXT_PUBLIC_TURNSTILE_SITE_KEY/);
-  assert.match(edge, /botPolicyForLevel/);
-  assert.match(edge, /No approved challenge provider is configured/);
+  assert.match(botProtectionEdge, /No approved challenge provider is configured; request is monitored instead/);
+  assert.match(botProtectionEdge, /NEXT_PUBLIC_TURNSTILE_SITE_KEY/);
+  assert.match(botProtectionEdge, /botPolicyForLevel/);
+  assert.match(botProtectionEdge, /No approved challenge provider is configured/);
+  assert.match(edge, /from "\.\/bot-protection-edge"/);
   assert.match(example, /BOT_PROTECTION_SENSITIVITY=balanced/);
 });
 
