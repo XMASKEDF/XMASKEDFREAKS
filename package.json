@@ -5,9 +5,9 @@
   "packageManager": "pnpm@10.12.1",
   "scripts": {
     "sync:game-assets": "node scripts/sync-game-assets.mjs",
-    "predev": "npm run sync:game-assets",
+    "predev": "corepack pnpm run sync:game-assets",
     "dev": "node scripts/dev-server.mjs",
-    "prebuild": "node scripts/assert-no-dev-server.mjs && npm run sync:game-assets && npm run check:i18n",
+    "prebuild": "node scripts/assert-no-dev-server.mjs && corepack pnpm run sync:game-assets && corepack pnpm run check:i18n",
     "build": "NEXT_DIST_DIR=.next-production next build",
     "postbuild": "node scripts/check-style-build.mjs",
     "start": "NEXT_DIST_DIR=.next-production next start",
