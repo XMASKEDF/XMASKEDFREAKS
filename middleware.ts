@@ -9,7 +9,7 @@ import { isSameOriginRequest, requestBodyLimit } from "@/lib/security/request";
 import { isAdminDevAuthEnabled } from "@/lib/admin-dev-bypass";
 import { checkRateLimit, ruleForPath } from "@/lib/infrastructure/rate-limit";
 import { getBotProtectionProvider } from "@/lib/infrastructure/bot-protection-edge";
-import { botPolicyForLevel, getStoredBotDetectionConfig, isActiveGameplayRoute, isGameRoute, isTurnstileCandidateRoute } from "@/lib/infrastructure/bot-policy";
+import { botPolicyForLevel, DEFAULT_BOT_DETECTION_CONFIG, getStoredBotDetectionConfig, isActiveGameplayRoute, isGameRoute, isTurnstileCandidateRoute } from "@/lib/infrastructure/bot-policy";
 
 type EdgeMaintenanceState = MaintenancePolicySettings & { expiresAt: number };
 const inactiveMaintenance: MaintenancePolicySettings = { enabled: false, scope: "full", disabledSystems: [] };
@@ -169,7 +169,7 @@ export async function middleware(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
   const requestCount = readCookieCount(request, "xmf_req_count") + 1;
   const failedAuthCount = readCookieCount(request, "xmf_failed_auth");
-  const botConfig = await getStoredBotDetectionConfig();
+  const botConfig = await getStoredBotDetectionConfig().catch(() => ({ ...DEFAULT_BOT_DETECTION_CONFIG }));
   const gameplayBotSignalsEnabled = botConfig.enabled && !activeGameplayRoute;
 
   const decision = evaluateSecurityRequest({

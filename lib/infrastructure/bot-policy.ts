@@ -92,7 +92,8 @@ export async function getStoredBotProtectionSensitivity(): Promise<BotProtection
     return fallback;
   }
   const response = await fetch(`${service.url}/rest/v1/security_settings?id=eq.1&select=bot_protection_sensitivity&limit=1`, { cache: "no-store", headers: serviceHeaders(service) }).catch(() => null);
-  const rows = response?.ok ? await response.json().catch(() => []) as Array<{ bot_protection_sensitivity?: unknown }> : [];
+  const payload = response?.ok ? await response.json().catch(() => []) : [];
+  const rows = Array.isArray(payload) ? payload as Array<{ bot_protection_sensitivity?: unknown }> : [];
   const value = normalizeBotProtectionSensitivity(rows[0]?.bot_protection_sensitivity || fallback);
   cachedSensitivity = { value, expiresAt: Date.now() + 2_000 };
   return value;
@@ -107,7 +108,8 @@ export async function getStoredBotDetectionConfig(): Promise<BotDetectionConfig>
     return fallback;
   }
   const response = await fetch(`${service.url}/rest/v1/security_settings?id=eq.1&select=bot_detection_enabled,bot_detection_level,bot_detection_supervisor_agent_id&limit=1`, { cache: "no-store", headers: serviceHeaders(service) }).catch(() => null);
-  const rows = response?.ok ? await response.json().catch(() => []) as Array<Record<string, unknown>> : [];
+  const payload = response?.ok ? await response.json().catch(() => []) : [];
+  const rows = Array.isArray(payload) ? payload as Array<Record<string, unknown>> : [];
   const row = rows[0] || {};
   const value: BotDetectionConfig = {
     enabled: typeof row.bot_detection_enabled === "boolean" ? row.bot_detection_enabled : fallback.enabled,
